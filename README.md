@@ -81,6 +81,8 @@ Isso ocorre com o uso de um reagente químico.
 * **Retirada do Rejeito:** O rejeito é retirado na descarga de fundo, onde há válvulas e tubulações. Nesse processo contínuo (onde a polpa entra por cima e a espuma transborda pela borda superior), a lama pesada com o rejeito é sugada e bombeada pelas saídas de fundo.
 * **Destino do Rejeito:** Esse rejeito vai para outras etapas de tratamento para tentar recuperar o restinho de ouro que sobrou ou, finalmente, é enviado para as famosas barragens de rejeito.
 
+---
+
 ## 🌊 Dinâmica da Espuma, Célula Jameson e a IA
 
 ### 🔄 Dinâmica da Espuma e o Transbordo
