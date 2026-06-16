@@ -137,3 +137,51 @@ A imagem para o computador é enxergada como uma grande tabela / matriz de núme
 
 ### 🧮 O Processamento
 * O computador faz operações matemáticas com as matrizes (soma, multiplicação, etc.) para destacar contrastes abruptos entre um número de valor 200 (centro claro) e... *(continua na próxima página)*
+
+---
+
+## 🧮 Machine Learning: Tratamento e Classificação de Dados
+
+### 📉 Normalização (Norm)
+*Consiste em "espremer" os dados para uma escala padrão e menor, geralmente entre 0 e 1.*
+* No básico, o valor máximo é 255 e o valor mínimo é 0. Basicamente é dividir o valor por 255.
+* **Por que fazer isso?** Deixa o modelo mais rápido, estável e preciso.
+* Exemplo: Pixel 255 vira 1, pixel 0 vira 0, pixel 127 vira 0,5.
+
+**A fórmula matemática:**
+$$X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}} = \frac{X}{X_{max}}$$
+
+### 🎯 Algoritmo KNN (K-Nearest Neighbors)
+* Clássico de **aprendizado supervisionado** (onde damos exemplos já classificados ao algoritmo).
+* **COMO?** Ele classifica um dado novo com base na maioria dos seus vizinhos mais próximos.
+
+**Na Prática:**
+1. Imagine que tenho várias fotos de bolhas que já estão rotuladas no banco de dados como "boas" ou "ruins" para o transbordo.
+2. Quando uma bolha nova chega, o KNN calcula a **distância matemática** (Distância Euclidiana) entre essa bolha nova e todas as outras do seu banco de dados.
+
+**Fórmula da Distância Euclidiana:**
+$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+
+* **A Decisão:** Se você definir a variável **K=3**, o algoritmo seleciona apenas as 3 bolhas vizinhas mais parecidas com a nova. Se 2 dessas forem "boas" e 1 for "ruim", ele classifica a nova imagem como "boa".
+
+---
+
+## 🧩 Aprendizado Não Supervisionado e Clusterização
+
+### 🔍 Clusterização
+* Método de **aprendizado não supervisionado**.
+* Consiste em jogar os dados para o computador sem dar nenhum rótulo ou gabarito prévio.
+* **Objetivo:** O algoritmo deve encontrar padrões ocultos e agrupar os dados por similaridade estrutural, criando *"clusters"* (grupos).
+
+**No nosso projeto:** Podemos fornecer centenas de imagens do processo para o algoritmo, sem dizer nada a ele. A máquina **deduz sozinha** e agrupa as imagens, descobrindo, por exemplo, que existem 3 padrões de espuma:
+* **Grupo A:** Bolhas miúdas e homogêneas
+* **Grupo B:** Bolhas estourando
+* **Grupo C:** Bolhas gigantes
+
+### 🌳 Dendrograma e Clusterização Hierárquica
+* **Dendrograma:** Representação visual de um tipo específico de clusterização. Ajuda a decidir qual nível de detalhamento é melhor.
+* **Clusterização Hierárquica (Como funciona?):**
+  1. O algoritmo vai juntando as imagens mais parecidas de duas em duas, criando pequenos grupos.
+  2. Depois, ele junta esses pequenos grupos em grupos maiores e assim por diante.
+* **O Gráfico:** O resultado visual é um gráfico em formato de árvore. Na base ficam as imagens separadas e, subindo nos galhos, as imagens vão se unindo.
+* **Utilidade do Dendrograma:** Decidir visualmente qual é o melhor "corte" a ser feito na árvore, determinando assim o número ideal de grupos de bolhas para o estudo.
