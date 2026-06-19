@@ -1,176 +1,196 @@
 # IC sobre "Avaliação de parâmetros de flotação utilizando Machine Learning"
-Esse repositório será usado para organizar pesquisas e estudos acerca da minha IC com orientação do professor Ardson Vianna.
+
+Este repositório será usado para organizar pesquisas, leituras e anotações relacionadas à minha Iniciação Científica, sob orientação do professor Ardson Vianna.
+
+O foco principal deste estudo é compreender como imagens de flotação na mineração podem ser analisadas com técnicas de Machine Learning e Visão Computacional, com o objetivo de identificar parâmetros visuais relevantes do processo e entender como essas informações podem apoiar a avaliação operacional.
 
 ---
 
-## 📦 Módulo 1: Célula Jameson
+## 📦 Módulo 1: Contexto da Flotação
 
-> **💡 Nota do projeto:** Moinhos são difíceis de modelar matematicamente. O uso de **Redes Neurais / IA** surge como uma alternativa viável para esse tipo de desafio.
+### O que é a flotação?
+A flotação é um processo de separação física amplamente utilizado no beneficiamento mineral. Seu objetivo é separar seletivamente partículas com base em suas propriedades físico-químicas, principalmente na afinidade ou repulsão pela água.
+
+Nesse processo, partículas de interesse podem ser tornadas hidrofóbicas, ou seja, com maior tendência a aderir às bolhas de ar e subir para a espuma, enquanto outras partículas permanecem hidrofílicas e seguem com a polpa como rejeito.
+
+### Por que esse processo é importante?
+A flotação é uma das operações unitárias mais importantes no processamento mineral, porque permite recuperar minerais de valor econômico de forma eficiente. Além da indústria mineral, esse tipo de processo também aparece em aplicações como reciclagem de papel e tratamento de águas.
+
+### O que se observa visualmente?
+Em um processo de flotação, a espuma formada na superfície é uma das partes mais importantes para observação. Ela concentra informações sobre:
+- quantidade de bolhas;
+- tamanho das bolhas;
+- estabilidade da espuma;
+- textura superficial;
+- presença de transbordo.
+
+Esses elementos podem indicar se o processo está operando de forma eficiente ou se precisa de ajustes.
+
+---
+
+## 📦 Módulo 2: Célula Jameson
+
+> **💡 Nota do projeto:** Processos de flotação podem ser difíceis de modelar matematicamente. Nesse contexto, o uso de redes neurais e outras técnicas de IA pode ser uma alternativa interessante para analisar dados e imagens do processo.
 
 ### O que é a Célula Jameson?
-É uma **célula de flotação de espuma**, utilizada num processo para separar seletivamente materiais hidrofóbicos (que repelem água) e hidrofílicos (que têm afinidade com a água). 
-* **Critério de Sucesso:** Bolha bem formada e correndo (transbordando) adequadamente.
-* **Aplicações:** Indústrias de processamento mineral, reciclagem de papel e tratamento de águas.
+A Célula Jameson é um tipo de célula de flotação por espuma utilizada em processos de separação mineral. Ela pode ser entendida como um exemplo importante dentro do estudo da flotação, pois ajuda a compreender como a espuma se forma e como o processo pode ser monitorado visualmente.
 
-**Definição da Operação:**
-Trata-se de uma operação unitária onde os minerais valiosos são separados do material sem valor. Isso é feito tornando os minerais hidrofóbicos, para que se fixem em bolhas de ar e subam à superfície, formando uma espuma rica em minério.
+### Principais características
+- É uma célula de flotação de alta intensidade.
+- Trabalha com bolhas finas, o que favorece o contato entre as partículas e o ar.
+- Possui boa eficiência energética em comparação com alguns sistemas convencionais.
+- É um bom exemplo para estudar o comportamento da espuma e da separação no processo de flotação.
 
-**Principais Características e Vantagens:**
-* ⬆️ **Maior intensidade** e ⬇️ **menor tamanho** em relação às células de flotação de colunas convencionais.
-* Não requer compressor de ar para forçar a suspensão das partículas de minério moído na água (mistura também chamada de **lama ou polpa**).
-* **Eficiência Energética:** A ausência de compressor e de partes móveis resulta em um **menor consumo de energia** quando comparada às células convencionais.
+### Princípio geral de funcionamento
+Na Célula Jameson, a polpa e o ar são introduzidos de forma a favorecer uma mistura intensa. Essa mistura gera bolhas pequenas, aumentando a chance de contato com as partículas de interesse.
 
-### ⚙️ Princípios de Funcionamento
+Depois dessa etapa, a mistura segue para a região de separação, onde as partículas hidrofóbicas tendem a aderir às bolhas e subir para a espuma, enquanto o material não desejado permanece na polpa e segue para descarte.
 
-**1. Tubo de Descida (*Downcomer*):** Ao contrário dos métodos tradicionais, a polpa (minério + água) e o ar são introduzidos *juntos* em uma coluna cilíndrica chamada "tubo de descida".
-
-**2. Efeito de Vácuo:** A polpa é injetada no topo desse tubo como um jato de alta velocidade. Esse jato cria um cisalhamento e um vácuo parcial que puxa *naturalmente* o ar atmosférico para dentro do tubo.
-* *Benefício direto:* Elimina a necessidade de compressores mecânicos para injetar o ar.
-
-**3. Mistura Intensa:** Dentro do tubo de descida, ocorre uma mistura de altíssima velocidade e intensidade.
-* *O diferencial:* O ar é quebrado em bolhas muito finas. Isso cria um ambiente de altíssima eficiência onde a probabilidade de contato entre a partícula de minério e a bolha de ar é de **virtualmente 100%**.
-
-**4. Separação no Tanque:** A mistura aerada desce pelo tubo e é descarregada no tanque principal da célula.
-* *Formação da Espuma (O Concentrado):* Como o tanque tem uma área muito maior que o tubo, a velocidade do fluido diminui bruscamente. Isso permite que as bolhas, agora carregadas de minerais valiosos, subam suavemente à superfície para formar a espuma.
-* *Descarte:* O material indesejado (rejeito), que permaneceu hidrofílico, afunda e é descarregado pelo fundo do tanque.
+### Relação com o projeto
+Embora a Jameson Cell não seja o foco principal da pesquisa, ela é útil como referência para entender o funcionamento geral de sistemas de flotação e para visualizar a importância da espuma no processo.
 
 ---
 
-## 📦 Módulo 2: Flotação por Espuma e a Dinâmica de Separação
+## 📦 Módulo 3: Flotação por Espuma e Dinâmica de Separação
 
-### O que é a Flotação por Espuma?
-É um **processo de separação física** com o objetivo de separar o que tem valor do que não tem, aproveitando as propriedades físico-químicas das partículas.
-* **Principal aplicação:** Indústria mineral e tratamento de água.
+### O que é a flotação por espuma?
+A flotação por espuma é um processo de separação física com o objetivo de separar materiais com base em suas propriedades superficiais. Ela é usada principalmente na indústria mineral, mas também pode ser aplicada em outros setores, como tratamento de água.
 
-**Etapas Iniciais:**
-1. **Base:** Mistura de água e minério moído ➔ Formação da **"polpa"**.
-2. **Injeção de ar:** Injetar ar dentro da polpa para criar o ambiente de separação.
+A lógica do processo é simples: partículas com comportamento superficial diferente interagem de maneira distinta com as bolhas de ar, o que permite a separação entre o material de interesse e o rejeito.
 
-### 🧪 A Química da Separação
-O processo utiliza reagentes químicos que alteram as propriedades das partículas para permitir a separação.
+### Etapas iniciais do processo
+1. Mistura de água e minério moído, formando a polpa.
+2. Injeção de ar dentro da polpa.
+3. Formação de bolhas.
+4. Interação entre as bolhas e as partículas.
+5. Formação da espuma e separação do material valioso.
 
-* O minério que possui valor econômico (ex: ouro) é tratado para se tornar **hidrofóbico** [*Veja o tópico 1*].
-    * Por ser hidrofóbico, o mineral valioso repele a água e adere (gruda) nas bolhas de ar que estão sendo injetadas [*Veja o tópico 2*].
-* Por outro lado, o material sem valor (rejeito) permanece **hidrofílico** e não gruda nas bolhas, ficando retido na água e indo para o fundo do tanque [*Veja o tópico 3*].
+### A química da separação
+A separação na flotação depende de reagentes químicos que modificam o comportamento das partículas.
 
-### 📌 Detalhamento do Processo (Mergulhando na Teoria)
+- As partículas de interesse podem ser tratadas para se tornarem hidrofóbicas.
+- As partículas que não interessam ao processo permanecem hidrofílicas.
+- As partículas hidrofóbicas tendem a aderir às bolhas de ar e subir com a espuma.
+- As partículas hidrofílicas permanecem na polpa e são removidas como rejeito.
 
-#### 1️⃣ Como as partículas se tornam hidrofóbicas?
-Isso ocorre com o uso de um reagente químico.
-* O principal reagente é o **coletor**, que é uma molécula bipolar. 
-    * *Estrutura:* Uma extremidade tem afinidade e gruda no ouro, e a outra extremidade (uma cadeia de hidrocarboneto) repele a água.
-* Quando o coletor é adicionado à polpa, ele "veste" as partículas de ouro, deixando as "caudas" oleosas apontadas para fora, repelindo a água.
-* *Nota extra:* Também usam-se espumantes e modificadores de pH no processo.
+### Como as partículas se tornam hidrofóbicas?
+Isso ocorre com o uso de reagentes, principalmente o coletor. O coletor é uma molécula que se liga à superfície do mineral de interesse e deixa a parte externa da partícula mais repelente à água.
 
-#### 2️⃣ Por que o ouro adere às bolhas?
-É uma questão de atração e repulsão (termodinâmica).
-* Como a partícula de ouro agora está coberta por uma camada química que repele a água, estar cercada por água gasta muita energia e a deixa "desconfortável".
-* Quando a bolha de ar passa perto, a partícula de ouro "foge" da água e gruda na bolha de ar.
-* O **ambiente gasoso (a bolha) é o único refúgio seguro** dentro daquele tanque de água para a partícula hidrofóbica.
+Além do coletor, também podem ser usados espumantes e modificadores de pH, dependendo das características do minério e do objetivo do processo.
 
-#### 3️⃣ Dá pra ver o rejeito no fundo do processo? Como esse rejeito é retirado?
-* **NÃO** dá para enxergar **nada** além da espuma, pois a "polpa" é extremamente turva, densa e opaca (semelhante a barro/lama).
-* **Onde a IA entra:** Como só dá para ver a espuma transbordando na superfície, é por isso que a **visão computacional do projeto é focada no topo do tanque**.
-* **Retirada do Rejeito:** O rejeito é retirado na descarga de fundo, onde há válvulas e tubulações. Nesse processo contínuo (onde a polpa entra por cima e a espuma transborda pela borda superior), a lama pesada com o rejeito é sugada e bombeada pelas saídas de fundo.
-* **Destino do Rejeito:** Esse rejeito vai para outras etapas de tratamento para tentar recuperar o restinho de ouro que sobrou ou, finalmente, é enviado para as famosas barragens de rejeito.
+### Por que o material de interesse adere às bolhas?
+Como a partícula foi modificada para repelir a água, ela tende a “preferir” a interface com o ar. Quando uma bolha passa próxima, a partícula pode aderir a ela e subir junto com a espuma. Isso acontece porque a configuração partícula-bolha é energeticamente mais favorável do que manter a partícula dispersa na água.
 
-### 🌊 Dinâmica da Espuma, Célula Jameson e a IA
+### E o rejeito?
+O rejeito é o material que não adere às bolhas e, por isso, permanece na polpa. Em muitos processos, esse material é retirado na descarga de fundo e segue para outras etapas de tratamento ou descarte.
 
-#### 🔄 Dinâmica da Espuma e o Transbordo
-1. As bolhas carregadas com partículas de minério valioso sobem à superfície do tanque.
-2. Essas bolhas se acumulam no topo, formando uma espuma rica em minério.
-3. Chegando ao ponto crítico do processo: ocorre o **transbordo**, para que o material rico em minério possa ser recolhido.
+### Como isso se relaciona com a visão computacional?
+Como a espuma é a parte visível e mais informativa do processo, a análise de imagens pode ajudar a observar parâmetros importantes, como:
+- tamanho médio das bolhas;
+- quantidade de bolhas;
+- distribuição das bolhas na imagem;
+- estabilidade da espuma;
+- textura da superfície;
+- sinais de transbordo.
 
-#### ⚙️ Célula Jameson (Diferencial)
-Diferente dos processos convencionais, na Célula Jameson (CJ) há o **tubo de descida**.
-* Nesse tubo ocorre a mistura intensa de ar e polpa.
-* Nessa mistura de **alta velocidade e intensidade**, cria-se um **vácuo** parcial no sistema.
-* A grande diferença é que, com esse vácuo e intensidade, são criadas **bolhas muito finas**.
-* Esse tamanho reduzido de bolhas é uma vantagem enorme, pois aumenta a probabilidade de **contato com a partícula** do minério para uma taxa de quase **100%**.
-
-#### 🤖 Como a IA Entra Nisso?
-*A eficiência do processo depende da espuma transbordando constantemente.*
-* Tradicionalmente, na indústria, a leitura de parâmetros como o tamanho de bolhas, estabilidade e transbordo da espuma é feita no **"olhômetro"** de um operador.
-* A visão computacional entra para **automatizar** essa leitura visual ➔ garantindo **medições precisas e constantes**, sem depender de análises subjetivas ou da presença constante de um operador.
+Isso torna a visão computacional uma ferramenta interessante para estudar o comportamento do processo de flotação.
 
 ---
 
-## 📦 Módulo 3: Machine Learning e Tratamento de Imagem
+## 📦 Módulo 4: Dinâmica da Espuma e a IA
 
-### 💻 O Básico de ML (Machine Learning)
+### O papel da espuma
+A espuma é a região onde se concentra grande parte da informação visual do processo. Ela funciona como um “sinal” do comportamento da flotação, já que mudanças no formato, densidade ou estabilidade da espuma podem indicar alterações operacionais.
 
-#### 🛠️ Engenharia de Software e Boas Práticas
-* Utilizar **boas práticas** no VS Code, criando códigos **modulares**.
-* Manter o controle de versões no GitHub.
-* ⚠️ **Atenção:** NÃO CRIAR um arquivo gigante! ➔ **CRIAR MÓDULOS** com funções específicas.
-* **Separação por pastas:**
-  * Uma para imagens cruas.
-  * Uma para imagens tratadas.
-  * Uma para scripts.
+### O que pode ser observado na espuma?
+- Bolhas mais finas ou mais grossas.
+- Espuma mais homogênea ou mais irregular.
+- Presença de transbordo.
+- Mudanças de textura ao longo do tempo.
+- Regiões com maior concentração de bolhas.
 
-#### 🖼️ Como o Computador Enxerga a Imagem?
-A imagem para o computador é enxergada como uma grande tabela / matriz de números.
-> **Definição:** `Pixel` = a menor unidade de uma imagem.
+### Onde a IA entra?
+Tradicionalmente, muitos desses parâmetros são observados de forma visual por operadores experientes. Porém, essa análise pode ser subjetiva e variar de pessoa para pessoa.
 
-**1. Exemplo: Imagem em Preto e Branco**
-* Cada "quadradinho" (pixel) recebe um valor de `0` (preto absoluto) a `255` (branco absoluto).
+A visão computacional entra para automatizar essa leitura visual, permitindo que imagens e vídeos do processo sejam transformados em informações quantitativas. Isso pode ajudar a obter medições mais consistentes e menos dependentes de interpretação humana.
 
-**2. Imagens em Escala de Cinza**
-* São formadas por matrizes 2D.
+### Possíveis objetivos da análise
+Neste projeto, a ideia é entender como a IA pode apoiar tarefas como:
+- identificação de padrões visuais;
+- estimativa de tamanho de bolhas;
+- contagem de bolhas;
+- detecção de espuma mais densa;
+- observação de comportamento temporal em vídeo.
 
-**3. Imagens Coloridas RGB**
-* São formadas por matrizes 3D.
-* Possuem uma estrutura mais complexa, com 3 matrizes sobrepostas, formando um **tensor**.
-* As matrizes representam:
-  1. Tons de vermelho (*Red*)
-  2. Tons de verde (*Green*)
-  3. Tons de azul (*Blue*)
-  * *(Exemplo: a leitura de um valor 50 pode representar a sombra da borda da bolha).*
-* Um único pixel na coordenada `x` e `y` é lido por 3 números: **Px,y = [R, G, B]**.
+---
 
-#### 🧮 O Processamento
-* O computador faz operações matemáticas com as matrizes (soma, multiplicação, etc.) para destacar contrastes abruptos entre um número de valor 200 (centro claro) e... *(continua na próxima página)*
+## 📦 Módulo 5: Machine Learning e Tratamento de Imagem
 
-### 🧮 Machine Learning: Tratamento e Classificação de Dados
+### O básico de Machine Learning
+Machine Learning é uma área da inteligência artificial que permite que computadores aprendam padrões a partir de dados. No contexto deste projeto, ele pode ser usado para identificar características visuais da flotação e apoiar a análise do processo.
 
-#### 📉 Normalização (Norm)
-*Consiste em "espremer" os dados para uma escala padrão e menor, geralmente entre 0 e 1.*
-* No básico, o valor máximo é 255 e o valor mínimo é 0. Basicamente é dividir o valor por 255.
-* **Por que fazer isso?** Deixa o modelo mais rápido, estável e preciso.
-* Exemplo: Pixel 255 vira 1, pixel 0 vira 0, pixel 127 vira 0,5.
+### Como o computador enxerga a imagem?
+Para o computador, uma imagem pode ser representada como uma matriz de números. Cada pixel possui um valor que representa brilho ou cor.
 
-**A fórmula matemática:**
-$$X_{norm} = \frac{X - X_{min}}{X_{max} - X_{min}} = \frac{X}{X_{max}}$$
+- Imagens em preto e branco podem ser vistas como matrizes simples.
+- Imagens em escala de cinza também são representadas por matrizes.
+- Imagens coloridas RGB possuem três canais: vermelho, verde e azul.
 
-#### 🎯 Algoritmo KNN (K-Nearest Neighbors)
-* Clássico de **aprendizado supervisionado** (onde damos exemplos já classificados ao algoritmo).
-* **COMO?** Ele classifica um dado novo com base na maioria dos seus vizinhos mais próximos.
+Em uma imagem RGB, cada pixel é composto por três valores, que juntos formam uma representação numérica da imagem.
 
-**Na Prática:**
-1. Imagine que tenho várias fotos de bolhas que já estão rotuladas no banco de dados como "boas" ou "ruins" para o transbordo.
-2. Quando uma bolha nova chega, o KNN calcula a **distância matemática** (Distância Euclidiana) entre essa bolha nova e todas as outras do seu banco de dados.
+### O processamento da imagem
+O computador aplica operações matemáticas sobre essas matrizes para identificar padrões, contrastes, bordas e texturas. Isso é importante porque as diferenças entre regiões claras e escuras, ou entre bordas e fundos, podem indicar a presença de bolhas, espuma ou ruído na imagem.
 
-**Fórmula da Distância Euclidiana:**
-$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+### Pré-processamento
+Antes de aplicar qualquer modelo, geralmente é necessário preparar a imagem. Esse processo pode incluir:
+- redimensionamento;
+- normalização;
+- redução de ruído;
+- ajuste de contraste;
+- segmentação preliminar.
 
-* **A Decisão:** Se você definir a variável **K=3**, o algoritmo seleciona apenas as 3 bolhas vizinhas mais parecidas com a nova. Se 2 dessas forem "boas" e 1 for "ruim", ele classifica a nova imagem como "boa".
+### Normalização
+A normalização é uma etapa importante, pois transforma os valores dos pixels para uma escala padrão, geralmente entre 0 e 1. Isso ajuda o modelo a aprender melhor e mais rapidamente.
 
-### 🧩 Aprendizado Não Supervisionado e Clusterização
+A ideia básica é que um pixel com valor 255 possa ser convertido em 1, e um pixel com valor 0 permaneça 0.
 
-#### 🔍 Clusterização
-* Método de **aprendizado não supervisionado**.
-* Consiste em jogar os dados para o computador sem dar nenhum rótulo ou gabarito prévio.
-* **Objetivo:** O algoritmo deve encontrar padrões ocultos e agrupar os dados por similaridade estrutural, criando *"clusters"* (grupos).
+### Aprendizado supervisionado
+No aprendizado supervisionado, o modelo aprende com exemplos já rotulados. No caso das imagens de flotação, isso significa que o modelo pode ser treinado com imagens classificadas, por exemplo, como:
+- espuma boa;
+- espuma ruim;
+- espuma estável;
+- espuma instável.
 
-**No nosso projeto:** Podemos fornecer centenas de imagens do processo para o algoritmo, sem dizer nada a ele. A máquina **deduz sozinha** e agrupa as imagens, descobrindo, por exemplo, que existem 3 padrões de espuma:
-* **Grupo A:** Bolhas miúdas e homogêneas
-* **Grupo B:** Bolhas estourando
-* **Grupo C:** Bolhas gigantes
+### Exemplo com KNN
+O KNN é um algoritmo clássico de aprendizado supervisionado. Ele classifica um novo dado com base na proximidade em relação a exemplos já conhecidos.
 
-#### 🌳 Dendrograma e Clusterização Hierárquica
-* **Dendrograma:** Representação visual de um tipo específico de clusterização. Ajuda a decidir qual nível de detalhamento é melhor.
-* **Clusterização Hierárquica (Como funciona?):**
-  1. O algoritmo vai juntando as imagens mais parecidas de duas em duas, criando pequenos grupos.
-  2. Depois, ele junta esses pequenos grupos em grupos maiores e assim por diante.
-* **O Gráfico:** O resultado visual é um gráfico em formato de árvore. Na base ficam as imagens separadas e, subindo nos galhos, as imagens vão se unindo.
-* **Utilidade do Dendrograma:** Decidir visualmente qual é o melhor "corte" a ser feito na árvore, determinando assim o número ideal de grupos de bolhas para o estudo.
+No contexto do projeto, o KNN só faria sentido depois de extrair características da imagem, como:
+- área das bolhas;
+- densidade da espuma;
+- número de regiões claras;
+- textura geral da superfície.
+
+Ou seja, primeiro a imagem precisa ser transformada em números úteis, e só depois esses números podem ser usados no algoritmo.
+
+### Aprendizado não supervisionado
+No aprendizado não supervisionado, os dados são analisados sem rótulos prévios. O objetivo é encontrar padrões, estruturas ou agrupamentos escondidos.
+
+Isso pode ser útil para explorar imagens de flotação e descobrir grupos com comportamentos visuais semelhantes, como:
+- espumas com bolhas pequenas e homogêneas;
+- espumas com bolhas maiores e mais dispersas;
+- espumas com instabilidade ou ruptura.
+
+### Clusterização
+A clusterização é uma técnica de aprendizado não supervisionado que agrupa elementos parecidos em conjuntos chamados clusters.
+
+No projeto, isso poderia ajudar a identificar diferentes perfis visuais de espuma sem precisar rotular tudo manualmente no início.
+
+### Dendrograma e clusterização hierárquica
+A clusterização hierárquica organiza os dados em uma estrutura de grupos menores que vão se unindo até formar grupos maiores. O dendrograma é a representação visual desse processo.
+
+Essa abordagem pode ser útil para entender, de forma exploratória, como as imagens de espuma se organizam por semelhança.
+
+
+
+EDITANDO A ESTRUTURA DO TEXTO...
+
