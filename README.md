@@ -324,3 +324,144 @@ Dependendo da pergunta que eu quiser responder no projeto, uma dessas abordagens
 - [Flotation froth image segmentation using Mask R-CNN](https://www.sciencedirect.com/science/article/abs/pii/S0892687522005696)
 - [A semantic segmentation-based algorithm for fast flotation bubble size distribution measurement](https://www.sciencedirect.com/science/article/abs/pii/S0263876224004337)
 - [Segment anything model-based method for precise froth size determination in flotation process](https://www.sciencedirect.com/science/article/pii/S0009250925004804)
+
+---
+
+## 📦 Módulo 7: Processamento de Vídeo e Rastreamento
+
+Neste módulo, o objetivo é entender como o processamento de vídeo pode ser usado na análise de flotação. Diferente da análise de uma imagem isolada, o vídeo permite observar a evolução da espuma ao longo do tempo, o que pode ser muito útil para identificar mudanças de comportamento no processo.
+
+### 🎥 Por que usar vídeo?
+Em muitos casos, uma única imagem mostra apenas um instante do processo. Já o vídeo permite acompanhar a movimentação das bolhas, a variação da espuma e possíveis sinais de instabilidade ou transbordo.
+
+Isso é importante porque, na flotação, o comportamento da espuma não acontece de forma estática: ele muda continuamente. Por isso, observar a sequência de frames pode ajudar a entender melhor como o processo está se comportando.
+
+### 🧭 O que pode ser analisado?
+Com o processamento de vídeo, é possível observar:
+- movimento das bolhas;
+- mudança da textura da espuma;
+- formação ou desaparecimento de regiões;
+- velocidade aproximada da superfície;
+- sinais de transbordo ao longo do tempo.
+
+Essas informações podem complementar a análise feita em imagens estáticas e dar uma visão mais completa do processo.
+
+### 🔄 Rastreamento de objetos
+O rastreamento é uma técnica que permite acompanhar um objeto através de vários frames de um vídeo. Em vez de apenas detectar a presença de uma bolha em um instante, o sistema tenta seguir essa bolha ao longo do tempo.
+
+No contexto deste projeto, isso pode ajudar a:
+- observar o deslocamento das bolhas;
+- acompanhar regiões da espuma;
+- entender se a superfície está estável;
+- identificar padrões temporais que indiquem mudanças operacionais.
+
+### 🤖 Relação com o projeto
+O processamento de vídeo pode ser especialmente útil quando o interesse não é apenas saber se há espuma, mas entender como ela se comporta. Isso pode ser importante para estudar situações como:
+- espuma muito agitada;
+- espuma pouco estável;
+- espuma que está se acumulando demais;
+- possíveis sinais de transbordo.
+
+Assim como nas imagens, o vídeo também pode ser tratado com técnicas de visão computacional e aprendizado de máquina para transformar informação visual em dados mais objetivos.
+
+### 📚 Referências principais
+- [What is Object Tracking? Computer Vision Guide - Ultralytics](https://www.ultralytics.com/glossary/object-tracking)
+- [Object Tracking in Computer Vision - GeeksforGeeks](https://www.geeksforgeeks.org/computer-vision/object-tracking-in-computer-vision/)
+- [The Complete Guide to Object Tracking – OpenCV, DeepSort and More](https://learnopencv.com/the-complete-guide-to-object-tracking-in-computer-vision/)
+- [Object Tracking: Definition & How It Works in Computer Vision - Sama](https://www.sama.com/blog/what-is-object-tracking-and-how-is-it-used)
+
+---
+
+## 📦 Módulo 8: Como usar os modelos no projeto
+
+Neste módulo, a ideia é juntar tudo o que foi estudado até aqui e pensar em como cada modelo pode ser usado na prática dentro do projeto. Como o foco da pesquisa é a análise de imagens e vídeos de flotação, faz sentido escolher a abordagem certa para cada tipo de tarefa.
+
+Também é importante pensar no ambiente de desenvolvimento. Como eu gosto bastante de usar o **VS Code**, ele pode ser uma boa escolha para organizar os arquivos, escrever os códigos, instalar as bibliotecas e testar os modelos de forma prática. O uso do VS Code com Python, OpenCV e Ultralytics é uma combinação bastante comum em projetos de visão computacional [web:103][web:86].
+
+### 🧠 Quando usar uma CNN
+As Redes Neurais Convolucionais são boas quando o objetivo principal é **classificar imagens**. Ou seja, se eu quiser separar imagens de espuma em categorias como “boa”, “ruim”, “estável” ou “instável”, a CNN pode ser uma boa escolha.
+
+Um exemplo simples seria:
+- coletar várias imagens da flotação;
+- rotular essas imagens de acordo com o comportamento da espuma;
+- treinar uma CNN para aprender esses padrões;
+- usar o modelo depois para classificar novas imagens automaticamente.
+
+Esse tipo de abordagem é interessante quando eu quero que o modelo aprenda a reconhecer padrões visuais gerais sem precisar localizar exatamente cada bolha ou cada região da espuma.
+
+### 🎯 Quando usar YOLO
+O YOLO é mais indicado quando eu quero **detectar objetos na imagem** de forma rápida. No caso do projeto, ele pode ser usado para encontrar bolhas, regiões de espuma ou áreas de interesse dentro da cena.
+
+Um exemplo de uso seria:
+- capturar imagens ou frames de vídeo da flotação;
+- treinar o YOLO para detectar bolhas ou regiões específicas;
+- receber como saída caixas delimitadoras mostrando onde cada objeto está localizado.
+
+Isso pode ser muito útil se eu quiser contar elementos, acompanhar sua posição ou estudar como a distribuição da espuma muda ao longo do tempo.
+
+### ✂️ Quando usar segmentação
+A segmentação é a melhor opção quando eu quero **medir com mais precisão** as regiões da imagem. Em vez de apenas marcar onde está um objeto com uma caixa, ela desenha a área exata que pertence à bolha, à espuma ou ao fundo.
+
+No projeto, isso pode ajudar em tarefas como:
+- medir a área ocupada pela espuma;
+- estimar o tamanho médio das bolhas;
+- calcular cobertura da superfície;
+- separar melhor as regiões de interesse.
+
+Se a ideia for obter dados mais detalhados e quantitativos, a segmentação provavelmente será uma das abordagens mais úteis.
+
+### 🛠️ Como isso poderia ser implementado
+Pensando na parte prática, eu poderia organizar o projeto em etapas:
+
+1. **Preparar o ambiente de trabalho**
+   - usar o VS Code como editor principal;
+   - criar um ambiente virtual em Python;
+   - instalar bibliotecas como `opencv-python`, `numpy`, `pandas`, `matplotlib` e `ultralytics`.
+
+2. **Organizar os dados**
+   - separar imagens e vídeos em pastas;
+   - criar rótulos, se necessário;
+   - escolher se o problema será de classificação, detecção ou segmentação.
+
+3. **Processar as imagens**
+   - ler os arquivos com OpenCV;
+   - aplicar pré-processamento;
+   - testar redimensionamento, normalização e remoção de ruído.
+
+4. **Treinar ou testar o modelo**
+   - usar CNN para classificação;
+   - usar YOLO para detecção;
+   - usar modelos de segmentação para medir regiões específicas.
+
+5. **Avaliar os resultados**
+   - verificar se o modelo está reconhecendo corretamente os padrões;
+   - comparar imagens originais e processadas;
+   - analisar se os resultados fazem sentido para o processo de flotação.
+
+### 💻 Ferramentas que podem ajudar
+Algumas ferramentas devem ser muito úteis nesse projeto:
+
+- **VS Code**: para escrever e organizar o código.
+- **Python**: linguagem principal do projeto.
+- **OpenCV**: para leitura, tratamento e análise de imagens e vídeos.
+- **Ultralytics**: para usar modelos YOLO de forma mais simples.
+- **PyTorch**: caso seja necessário treinar ou ajustar redes neurais mais avançadas.
+- **Jupyter Notebook**: útil para testar ideias e visualizar resultados rapidamente.
+
+### 🔗 Exemplo de organização do projeto
+Uma estrutura possível seria:
+
+- `data/` para imagens e vídeos.
+- `models/` para pesos treinados.
+- `notebooks/` para testes e experimentos.
+- `src/` para os códigos principais.
+- `results/` para salvar previsões, gráficos e análises.
+
+Essa organização ajuda a deixar o projeto mais limpo e facilita quando eu precisar revisar o que foi feito.
+
+### 📚 Referências principais
+- [Ultralytics VS Code Extension](https://docs.ultralytics.com/integrations/vscode)
+- [Object Detection - Ultralytics YOLO Docs](https://docs.ultralytics.com/tasks/detect)
+- [YOLO Object Detection & Segmentation | Ultralytics](https://docs.ultralytics.com)
+- [Object Tracking in Computer Vision - GeeksforGeeks](https://www.geeksforgeeks.org/computer-vision/object-tracking-in-computer-vision/)
+- [YOLO Object Detection with OpenCV in Python](https://github.com/Tinker-Twins/YOLO-OpenCV-Python)
