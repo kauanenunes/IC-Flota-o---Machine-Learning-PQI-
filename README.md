@@ -39,6 +39,12 @@ Em um processo de flotação, a espuma formada na superfície é uma das partes 
 
 Esses elementos podem indicar se o processo está operando de forma eficiente ou se precisa de ajustes.
 
+### 📚 Referências principais
+- [Flotação - Mineralis/CETEM](http://mineralis.cetem.gov.br/bitstream/cetem/1287/1/Tend%C3%AAnciasParte2.3.pdf)
+- [Flotação - Mineralis/CETEM](https://mineralis.cetem.gov.br/bitstream/cetem/744/1/CCL00330010.pdf)
+
+🔗 [Voltar ao sumário](#-sumário)
+
 ---
 
 ## 📦 Módulo 2: Célula Jameson
@@ -61,6 +67,10 @@ Depois dessa etapa, a mistura segue para a região de separação, onde as part�
 
 ### 🧩 Relação com o projeto
 Embora a Jameson Cell não seja o foco principal da pesquisa, ela é útil como referência para entender o funcionamento geral de sistemas de flotação e para visualizar a importância da espuma no processo.
+
+### 📚 Referências principais
+- [Jameson cell - Wikipedia](https://en.wikipedia.org/wiki/Jameson_cell)
+- [Flotação - Mineralis/CETEM](http://mineralis.cetem.gov.br/bitstream/cetem/1287/1/Tend%C3%AAnciasParte2.3.pdf)
 
 🔗 [Voltar ao sumário](#-sumário)
 
@@ -111,6 +121,13 @@ Como a espuma é a parte visível e mais informativa do processo, a análise de 
 
 Isso torna a visão computacional uma ferramenta interessante para estudar o comportamento do processo de flotação.
 
+### 📚 Referências principais
+- [Flotação - Mineralis/CETEM](http://mineralis.cetem.gov.br/bitstream/cetem/1287/1/Tend%C3%AAnciasParte2.3.pdf)
+- [Flotação - Mineralis/CETEM](https://mineralis.cetem.gov.br/bitstream/cetem/744/1/CCL00330010.pdf)
+- [Advancements in Machine Learning for Optimal Performance in Flotation Processes: A Review](https://www.mdpi.com/journal/minerals)
+- [Flotation froth image segmentation using Mask R-CNN](https://www.sciencedirect.com/science/article/abs/pii/S0892687522005696)
+- [A semantic segmentation-based algorithm for fast flotation froth image analysis](https://www.sciencedirect.com/science/article/abs/pii/S0263876224004337)
+
 🔗 [Voltar ao sumário](#-sumário)
 
 ---
@@ -139,6 +156,12 @@ Neste projeto, a ideia é entender como a IA pode apoiar tarefas como:
 - contagem de bolhas;
 - detecção de espuma mais densa;
 - observação de comportamento temporal em vídeo.
+
+### 📚 Referências principais
+- [Advancements in Machine Learning for Optimal Performance in Flotation Processes: A Review](https://www.mdpi.com/journal/minerals)
+- [Flotation froth image segmentation using Mask R-CNN](https://www.sciencedirect.com/science/article/abs/pii/S0892687522005696)
+- [A semantic segmentation-based algorithm for fast flotation froth image analysis](https://www.sciencedirect.com/science/article/abs/pii/S0263876224004337)
+- [Lecture 15: Detection and Segmentation - CS231n](https://cs231n.stanford.edu/slides/2021/lecture_15.pdf)
 
 🔗 [Voltar ao sumário](#-sumário)
 
@@ -210,6 +233,11 @@ A clusterização hierárquica organiza os dados em uma estrutura de grupos meno
 
 Essa abordagem pode ser útil para entender, de forma exploratória, como as imagens de espuma se organizam por semelhança.
 
+### 📚 Referências principais
+- [Lecture 15: Detection and Segmentation - CS231n](https://cs231n.stanford.edu/slides/2021/lecture_15.pdf)
+- [Computer vision techniques explained](https://avutec.com/computer-vision-techniques/)
+- [Aspersão automática de vias: Tecnologia de visão computacional na mineração](https://revistaminerios.com/aspersao-automatica-vias-mineracao/)
+
 🔗 [Voltar ao sumário](#-sumário)
 
 ---
@@ -230,9 +258,14 @@ Nesta fase da IC, o objetivo principal é entender o problema e construir uma ba
 
 ## 📚 Referências iniciais
 
-- Allan, G. C., & Woodcock, J. T. (2001). *A review of the flotation of native gold and electrum*.
-- Bulatovic, S. M. (2007). *Handbook of Flotation Reagents: Chemistry, Theory and Practice*.
-- Dunn, R. (2016). *Flotation of Gold and Gold-Bearing Ores*.
-- [Wikipedia: Jameson cell](https://en.wikipedia.org/wiki/Jameson_cell)
+- [Jameson cell - Wikipedia](https://en.wikipedia.org/wiki/Jameson_cell)
+- [Flotação - Mineralis/CETEM](http://mineralis.cetem.gov.br/bitstream/cetem/1287/1/Tend%C3%AAnciasParte2.3.pdf)
+- [Flotação - Mineralis/CETEM](https://mineralis.cetem.gov.br/bitstream/cetem/744/1/CCL00330010.pdf)
+- [Advancements in Machine Learning for Optimal Performance in Flotation Processes: A Review](https://www.mdpi.com/journal/minerals)
+- [Flotation froth image segmentation using Mask R-CNN](https://www.sciencedirect.com/science/article/abs/pii/S0892687522005696)
+- [A semantic segmentation-based algorithm for fast flotation froth image analysis](https://www.sciencedirect.com/science/article/abs/pii/S0263876224004337)
+- [Lecture 15: Detection and Segmentation - CS231n](https://cs231n.stanford.edu/slides/2021/lecture_15.pdf)
+- [Computer vision techniques explained](https://avutec.com/computer-vision-techniques/)
+- [Aspersão automática de vias: Tecnologia de visão computacional na mineração](https://revistaminerios.com/aspersao-automatica-vias-mineracao/)
 
 🔗 [Voltar ao sumário](#-sumário)
