@@ -269,3 +269,58 @@ Nesta fase da IC, o objetivo principal é entender o problema e construir uma ba
 - [Aspersão automática de vias: Tecnologia de visão computacional na mineração](https://revistaminerios.com/aspersao-automatica-vias-mineracao/)
 
 🔗 [Voltar ao sumário](#-sumário)
+
+---
+
+## 📦 Módulo 6: Deep Learning e Visão Computacional
+
+Neste módulo, o objetivo é entender algumas das principais abordagens de Deep Learning usadas em visão computacional e pensar em como elas podem ser aplicadas à análise de imagens de flotação. Aqui a ideia não é ainda implementar tudo, mas compreender o papel de cada modelo e em que tipo de problema ele pode ajudar.
+
+### 🧠 Redes Neurais Convolucionais
+As Redes Neurais Convolucionais, ou CNNs, são modelos criados especialmente para trabalhar com imagens. Elas conseguem aprender padrões visuais como bordas, texturas, formas e regiões com contraste, construindo representações cada vez mais complexas ao longo das camadas.
+
+No contexto deste projeto, uma CNN pode ser útil para:
+- classificar imagens de espuma;
+- identificar padrões visuais da flotação;
+- aprender características importantes da superfície observada.
+
+A grande vantagem das CNNs é que elas aprendem essas características automaticamente, sem exigir que tudo seja definido manualmente.
+
+### 🎯 YOLO (*You Only Look Once*)
+O YOLO é uma família de modelos de detecção de objetos. Ele foi criado para localizar e identificar objetos em imagens de forma rápida, olhando a imagem praticamente em uma única passada.
+
+Em problemas de flotação, isso pode ser útil para:
+- localizar bolhas na imagem;
+- detectar regiões de espuma;
+- contar objetos visíveis;
+- observar a distribuição espacial da superfície.
+
+Por isso, o YOLO é uma opção interessante quando o objetivo não é apenas dizer se há bolhas, mas também saber **onde** elas estão.
+
+### ✂️ Segmentação
+A segmentação é uma tarefa da visão computacional que tenta separar a imagem em regiões com significado. Em vez de apenas dizer que existe um objeto ali, ela busca delimitar melhor os contornos e os pixels que pertencem à região de interesse.
+
+No caso da flotação, isso pode ajudar a:
+- delimitar bolhas individualmente;
+- medir área ocupada pela espuma;
+- estimar tamanho médio das bolhas;
+- analisar cobertura e distribuição espacial.
+
+Essa abordagem é especialmente interessante quando o objetivo é transformar imagens em medidas mais detalhadas e quantitativas.
+
+### 🔎 Relação entre as abordagens
+Essas três ideias podem ser vistas como complementares:
+
+- **CNN** ajuda a aprender padrões e classificar imagens.
+- **YOLO** ajuda a localizar objetos de forma rápida.
+- **Segmentação** ajuda a separar e medir regiões com mais precisão.
+
+Dependendo da pergunta que eu quiser responder no projeto, uma dessas abordagens pode fazer mais sentido do que as outras. Por isso, entender essa diferença é um passo importante antes de seguir para a parte prática.
+
+### 📚 Referências principais
+- [Convolutional Neural Network (CNN) in Deep Learning](https://www.geeksforgeeks.org/deep-learning/convolutional-neural-network-cnn-in-machine-learning/)
+- [Object Detection - Ultralytics YOLO Docs](https://docs.ultralytics.com/tasks/detect)
+- [YOLO Object Detection & Segmentation | Ultralytics](https://docs.ultralytics.com)
+- [Flotation froth image segmentation using Mask R-CNN](https://www.sciencedirect.com/science/article/abs/pii/S0892687522005696)
+- [A semantic segmentation-based algorithm for fast flotation bubble size distribution measurement](https://www.sciencedirect.com/science/article/abs/pii/S0263876224004337)
+- [Segment anything model-based method for precise froth size determination in flotation process](https://www.sciencedirect.com/science/article/pii/S0009250925004804)
